@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Contact.css";
 import ReCAPTCHA from "react-google-recaptcha";
 
-function Contact() {
+function Contact(props) {
   const [data,setData]=useState({
     customerName:"",
     customerEmail:"",
@@ -14,15 +14,25 @@ function Contact() {
     setData({...data,[name]:value})
     
   }
-  const config={
-    Username:"connect@tractionshastra.com",
-    Password:"E6A2B4EA967F0BDFBE109EC9ACF7F1674E79",
-    Host:"smtp.elasticemail.com",
-    Port:2525,
-    To : 'them@website.com',
-    From : "you@isp.com",
-    Subject : "This is the subject",
-    Body : "And this is the body"
+  const handleClick=(e)=>{
+    const {customerName, customerEmail, customerNote, customerPhone} =data;
+    if(!customerName ||!customerEmail||!customerNote|| !customerPhone){
+      props.showAlert("All fields are reuired","Danger")
+    }
+    else{
+      e.preventDefault()
+    const config={
+      SecureToken:"dcf1aec6-2e21-4a3a-bcc1-fb06900b8934",
+      To : 'connect@tractionshastra.com',
+      From : data.customerEmail,
+      Subject : "FeedBack From Customer (Assignment)",
+      Body : `${data.customerName} is connected to you and completed the assignment you have given`
+    }
+    if(window.Email){
+      window.Email.send(config).then((message)=>props.showAlert("Feedback Submitted Successfully","success"))
+
+    }
+    }
   }
   const [verified,setVerified]= useState(false)
 
@@ -90,7 +100,7 @@ function Contact() {
     sitekey="6LdxYnwoAAAAAPn4yzzK6Tv0JokKed3zFFxZsbgV"
     onChange={onChange}
   />
-          <button id="customerOrder" disabled={!verified}>SUBMIT</button>
+          <button id="customerOrder" disabled={!verified} onClick={handleClick}>SUBMIT</button>
         </form>
       </div>
     </>
