@@ -22,12 +22,13 @@ function App() {
     <BrowserRouter>
     <div className="App">
       <Nav/>
-      <Alert alert={alert}/>
+      
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/service' element={<Service/>}/>
         <Route path='/contact' element={<Contact showAlert={showAlert}/>}/>
       </Routes>
+      <Alert alert={alert}/>
       <Footer/>
     </div>
     </BrowserRouter>

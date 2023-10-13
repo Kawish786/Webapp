@@ -99,7 +99,7 @@ function Contact(props) {
           </label>
           <input id="spamProtection" name="spamProtection" type="text" />
           <ReCAPTCHA
-    sitekey="6LdxYnwoAAAAAPn4yzzK6Tv0JokKed3zFFxZsbgV"
+    sitekey="6Lek7pooAAAAAFm63Jyjf08UhkL2KbCvLXE2JDCn"
     onChange={onChange}
   />
           <button id="customerOrder"  onClick={handleClick}>SUBMIT</button>
