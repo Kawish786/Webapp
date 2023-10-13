@@ -15,12 +15,13 @@ function Contact(props) {
     
   }
   const handleClick=(e)=>{
+    e.preventDefault()
     const {customerName, customerEmail, customerNote, customerPhone} =data;
     if(!customerName ||!customerEmail||!customerNote|| !customerPhone){
-      props.showAlert("All fields are reuired","Danger")
+      props.showAlert("All fields are reuired","danger")
     }
     else{
-      e.preventDefault()
+      
     const config={
       SecureToken:"dcf1aec6-2e21-4a3a-bcc1-fb06900b8934",
       To : 'connect@tractionshastra.com',
@@ -101,7 +102,7 @@ function Contact(props) {
     sitekey="6LdxYnwoAAAAAPn4yzzK6Tv0JokKed3zFFxZsbgV"
     onChange={onChange}
   />
-          <button id="customerOrder" disabled={!verified} onClick={handleClick}>SUBMIT</button>
+          <button id="customerOrder"  onClick={handleClick}>SUBMIT</button>
         </form>
       </div>
     </>

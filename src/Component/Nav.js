@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 function Nav() {
   return (
     <div>
-        <nav className="navbar">
+        <nav className="navbar fixed-top">
         <a className="logo text-light">LOGO</a>
         <input type="checkbox" id="toggler"/>
         <label htmlFor="toggler" className='text-primary'><MenuSquare /></label>
