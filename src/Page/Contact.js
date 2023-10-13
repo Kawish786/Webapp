@@ -46,7 +46,7 @@ function Contact(props) {
     <>
       <div className="contact-us">
         <form action="#">
-          <label htmlFor="customerName">
+          <label htmlFor="customerName" className="mt-3">
             NAME <em>&#x2a;</em>
           </label>
           <input

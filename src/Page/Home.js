@@ -57,7 +57,7 @@ function Home() {
               alt="..."
             />
           </div>
-          <div className="carousel-item">
+          <div className="carousel-item ">
             <img
               style={{ height: "65vh", objectFit: "cover" }}
               src={img2}

@@ -18,7 +18,7 @@ function Service() {
     <>
       
       <section className="pricing py-5">
-  <div className="container">
+  <div className="container my-5">
     <div className="row">
       <div className="col-lg-4">
         <div className="card mb-5 mb-lg-0">
