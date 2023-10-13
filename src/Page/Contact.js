@@ -102,7 +102,8 @@ function Contact(props) {
     sitekey="6Lek7pooAAAAAFm63Jyjf08UhkL2KbCvLXE2JDCn"
     onChange={onChange}
   />
-          <button id="customerOrder"  onClick={handleClick}>SUBMIT</button>
+  <p style={{color:"red"}}>To Enable the Submit Button Check the captcha</p>
+          <button id="customerOrder" disabled={!verified}  onClick={handleClick}>SUBMIT</button>
         </form>
       </div>
     </>
