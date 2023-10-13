@@ -26,7 +26,8 @@ function Contact(props) {
       To : 'connect@tractionshastra.com',
       From : data.customerEmail,
       Subject : "FeedBack From Customer (Assignment)",
-      Body : `${data.customerName} is connected to you and completed the assignment you have given`
+      Body : `${data.customerName} is connected to you and completed the assignment you have given and my email is ${data.customerEmail}
+              my phone number is ${data.customerPhone} <br/> Below you can check about me ${data.customerNote}  `
     }
     if(window.Email){
       window.Email.send(config).then((message)=>props.showAlert("Feedback Submitted Successfully","success"))
